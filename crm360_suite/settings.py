@@ -136,4 +136,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Custom
 
-AUTH_USER_MODEL = 'crm.User'
+AUTH_USER_MODEL = 'crm.UserAU'
