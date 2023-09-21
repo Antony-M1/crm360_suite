@@ -85,7 +85,9 @@ class Customer(models.Model):
     
     salutation = models.ForeignKey(
                     "Salutation",
-                    on_delete=models.CASCADE,
+                    on_delete=models.SET_NULL,
+                    null=True,
+                    blank=False
                 )
     customer_name = models.CharField(
         max_length=255,
@@ -98,6 +100,24 @@ class Customer(models.Model):
         default='Company',
         verbose_name='Customer Type',
         help_text='It may be a individual or'
+    )
+    
+    territory = models.ForeignKey(
+        'Territory',
+        max_length=255,
+        on_delete=models.SET_NULL,
+        db_column='territory',
+        blank=True,
+        null=True
+    )
+    
+    customer_group = models.ForeignKey(
+        'CustomerGroup',
+        max_length=255,
+        on_delete=models.SET_NULL,
+        db_column='customer_group',
+        blank=True,
+        null=True
     )
     
     class Meta:
@@ -117,9 +137,10 @@ class Territory(models.Model):
     )
     parent_name = models.ForeignKey(
         'Territory',
-        on_delete=models.PROTECT,
+        on_delete=models.SET_DEFAULT,
         null=True,
-        blank=True
+        blank=True,
+        default='All Territories'
     )
     
     def clean(self):
@@ -137,3 +158,19 @@ class Territory(models.Model):
 def territory_pre_delete(sender, instance, **kwargs):
     # Custom code to run before the instance is deleted
     print(f"Deleting {instance.name} (ID: {instance.parent_name})")
+    
+    
+class CustomerGroup(models.Model):
+    
+    name = models.CharField(
+        max_length=255,
+        primary_key=True,
+        db_column='name',
+    )
+    
+    def __str__(self) -> str:
+        return self.name
+    
+    class Meta:
+        db_table = 'tabCustomer Group'
+        verbose_name = 'Customer Group'

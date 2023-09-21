@@ -5,7 +5,8 @@ from .models import (
     Gender,
     LeadSource,
     Customer,
-    Territory
+    Territory,
+    CustomerGroup
 )
 
 # Register your models here.
@@ -63,3 +64,11 @@ class AdminTerritory(admin.ModelAdmin):
     search_fields = ('name',)
     
 admin.site.register(Territory, AdminTerritory)
+
+
+class AdminCustomerGroup(admin.ModelAdmin):
+    list_display = ('name',)
+    list_filters = ('name',)
+    search_fields = ('name',)
+
+admin.site.register(CustomerGroup, AdminCustomerGroup)
