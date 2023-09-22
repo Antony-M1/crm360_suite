@@ -1,0 +1,9 @@
+/* This styles.css file contains the font ant other common style */
+
+
+@font-face {
+    font-family: 'Audiowide-Regular-CRM';
+    src: url('../fonts/audiowide/Audiowide-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
