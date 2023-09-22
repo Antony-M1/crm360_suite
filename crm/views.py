@@ -5,9 +5,9 @@ from django.http import HttpResponse
 
 def home(request):
     
-    return render(request, template_name='index.html')
+    return render(request, template_name='crm/index.html')
 
 
 def login(request):
     
-    return render(request, template_name='login.html')
+    return render(request, template_name='crm/login.html')
