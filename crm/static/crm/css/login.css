@@ -6,4 +6,8 @@ body {
 
 .login-container {
     font-family: 'Audiowide-Regular-CRM';
+    height: 400px;
+    width: 600px;
+    border: 2px solid purple;
 }
+
