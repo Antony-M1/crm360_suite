@@ -77,3 +77,24 @@ input[type="password"] {
 .signup-content{
     padding-right: 10px;
 }
+
+
+/* Animation */
+
+.waviy {
+  position: relative;
+}
+.waviy span {
+  position: relative;
+  display: inline-block;
+  font-size: 40px;
+  color: purple;
+  text-transform: uppercase;
+  animation: flip 3s infinite;
+  animation-delay: calc(.3s * var(--i))
+}
+@keyframes flip {
+  0%,80% {
+    transform: rotateY(360deg) 
+  }
+}
