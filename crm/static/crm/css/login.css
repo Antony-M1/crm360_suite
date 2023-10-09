@@ -98,3 +98,10 @@ input[type="password"] {
     transform: rotateY(360deg) 
   }
 }
+
+
+.error-message{
+    color: red;
+    font-style: bold;
+    padding: 10px;
+}

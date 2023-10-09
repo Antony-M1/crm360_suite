@@ -10,7 +10,8 @@
     </head>
     <body>
         <div class="container">
-            <form action="#" method="POST">
+            <form id="login-form" method="POST">
+                {% csrf_token %}
                 <div class="login-container">
                     <!-- <div class="company-title">CRM 360</div> -->
                     <div class="waviy company-title">
@@ -64,7 +65,9 @@
                         </p>
                     </div>
                 </div>
+                <div id="error-message"></div>
             </form>
         </div>
+        <script src="{% static 'crm/js/login.js' %}"></script>
     </body>
 </html>

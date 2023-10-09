@@ -6,7 +6,10 @@ from .models import (
     LeadSource,
     Customer,
     Territory,
-    CustomerGroup
+    CustomerGroup,
+    Blog,
+    Author,
+    Entry
 )
 
 # Register your models here.
@@ -72,3 +75,27 @@ class AdminCustomerGroup(admin.ModelAdmin):
     search_fields = ('name',)
 
 admin.site.register(CustomerGroup, AdminCustomerGroup)
+
+
+class AdminAuthor(admin.ModelAdmin):
+    list_display = ('name',)
+    list_filters = ('name',)
+    search_fields = ('name',)
+
+admin.site.register(Author, AdminAuthor)
+
+
+class AdminBlog(admin.ModelAdmin):
+    list_display = ('name',)
+    list_filters = ('name',)
+    search_fields = ('name',)
+
+admin.site.register(Blog, AdminBlog)
+
+
+class AdminEntry(admin.ModelAdmin):
+    list_display = ('headline',)
+    list_filters = ('headline',)
+    search_fields = ('headline',)
+
+admin.site.register(Entry, AdminEntry)
