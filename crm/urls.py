@@ -6,5 +6,6 @@ from . import views
 urlpatterns = [
     path('', views.home),
     path('', include('crm.api.urls')),
-    path('login',views.login)
+    path('login',views.login),
+    path('sign-up',views.signup)
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

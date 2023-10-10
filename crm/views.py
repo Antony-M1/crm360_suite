@@ -9,3 +9,8 @@ def home(request):
 
 def login(request):
     return render(request, template_name='crm/login.html')
+
+
+def signup(request):
+    
+    return render(request, template_name='crm/signup.html')

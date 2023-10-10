@@ -1,0 +1,26 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'crm/css/styles.css' %}" />
+    <link rel="stylesheet" href="{% static 'crm/css/signup.css' %}">
+    <title>CRM 360 Signup</title>
+</head>
+<body>
+    <div class="signup-container">
+        <div class="signup-box">
+            <div class="signup-head">Sign Up</div>
+            <div class="signup-form">
+               <form action="/api/v1/sign-up" method="POST">
+                    <label for="your_name">Your name: </label>
+                    <input id="your_name" type="text" name="your_name" value="{{ current_name }}">
+                    <input type="submit" value="OK">
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
