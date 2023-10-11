@@ -14,13 +14,73 @@
         <div class="signup-box">
             <div class="signup-head">Sign Up</div>
             <div class="signup-form">
-               <form action="/api/v1/sign-up" method="POST">
-                    <label for="your_name">Your name: </label>
-                    <input id="your_name" type="text" name="your_name" value="{{ current_name }}">
+               <form action="/api/v1/sign-up" method="POST" onsubmit="return validateForm()">
+                    {% csrf_token %}
+                    <label for="first_name">First Name: </label><br>
+                    <div class="input-container">
+                        <input id="first_name" type="text" name="first_name" value="{{ first_name }}" required>
+                        <div id="first_name_error" class="error-message"></div>
+                    </div>
+
+                    <label for="last_name">Last Name: </label><br>
+                    <div class="input-container">
+                        <input id="last_name" type="text" name="last_name" value="{{ last_name }}" required>
+                        <div id="last_name_error" class="error-message"></div>
+                    </div>
+
+                    <label for="Email">Email: </label><br>
+                    <div class="input-container">
+                        <input id="Email" type="email" name="email" value="{{ email }}" required>
+                    </div>
+                    <label for="password">Password: </label><br>
+                    <div class="input-container">
+                        <input id="password" type="password" name="password" required>
+                        <div id="password_error" class="error-message"></div>
+                    </div><br>
+
                     <input type="submit" value="OK">
                 </form>
             </div>
         </div>
     </div>
+
+    <script>
+        function validateForm() {
+            var firstName = document.getElementById("first_name").value;
+            var lastName = document.getElementById("last_name").value;
+            var password = document.getElementById("password").value;
+            var firstNameError = document.getElementById("first_name_error");
+            var lastNameError = document.getElementById("last_name_error");
+            var passwordError = document.getElementById("password_error");
+
+            // Validate first_name and last_name
+            if (firstName.length > 20) {
+                firstNameError.textContent = "First Name must be 20 characters or less.";
+                return false;
+            } else {
+                firstNameError.textContent = "";
+            }
+
+            if (lastName.length > 20) {
+                lastNameError.textContent = "Last Name must be 20 characters or less.";
+                return false;
+            } else {
+                lastNameError.textContent = "";
+            }
+
+            // Validate password
+            if (password.length < 6) {
+                passwordError.textContent = "Password length atleast 6 characters and must contain at least one uppercase letter,\n one lowercase letter, and one number.";
+                return false;
+            } else if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$/.test(password)) {
+                passwordError.textContent = "Password length atleast 6 characters \n it contain at least one uppercase letter,\n one lowercase letter, and one number.";
+                return false;
+            } else {
+                passwordError.textContent = "";
+            }
+
+            return true;
+        }
+    </script>
 </body>
 </html>

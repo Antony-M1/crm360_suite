@@ -7,3 +7,10 @@
     font-weight: normal;
     font-style: normal;
 }
+.error-message {
+    color: red;
+    display: block;
+    max-height: 3em; /* Set the maximum height for the error message */
+    overflow: hidden; /* Hide overflow text */
+    white-space: pre-wrap; /* Enable text wrapping */
+}
