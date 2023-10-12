@@ -8,9 +8,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'crm/css/styles.css' %}" />
     <link rel="stylesheet" href="{% static 'crm/css/index.css' %}" />
+    <link rel="stylesheet" href="{% static 'crm/css/sidebar.css' %}" />
+
     <title>Document</title>
 </head>
 <body>
+    <div class="sidebar">
+        {% for title in side_nav_data %}
+        <a class="active" href="#title">{{ title }}</a>
+        {% endfor %}
+    </div>
     <h1>Home</h1>
 </body>
 </html>

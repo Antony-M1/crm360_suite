@@ -9,7 +9,8 @@ from .models import (
     CustomerGroup,
     Blog,
     Author,
-    Entry
+    Entry,
+    Masters
 )
 
 # Register your models here.
@@ -99,3 +100,10 @@ class AdminEntry(admin.ModelAdmin):
     search_fields = ('headline',)
 
 admin.site.register(Entry, AdminEntry)
+
+class AdminMasters(admin.ModelAdmin):
+    list_display = ('name', 'created_at')
+    list_filters = ('name',)
+    search_fields = ('name',)
+
+admin.site.register(Masters, AdminMasters)
