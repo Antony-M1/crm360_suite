@@ -8,5 +8,6 @@ urlpatterns = [
     path('', include('crm.api.urls')),
     path('login',views.login),
     path('sign-up',views.signup),
-    path('sidebar/:id', views.sidebar)
+    path('sidebar/:id', views.sidebar),
+    path('navbar',views.navbar)
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

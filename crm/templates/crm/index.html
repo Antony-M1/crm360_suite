@@ -13,11 +13,8 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="sidebar">
-        {% for title in side_nav_data %}
-        <a class="active" href="#title">{{ title }}</a>
-        {% endfor %}
-    </div>
+    {% block navbar %}{% endblock %}
+
     <h1>Home</h1>
 </body>
 </html>
