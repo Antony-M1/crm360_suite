@@ -1,7 +1,6 @@
 function sideNavData(req){
 
     async function postJSON(data) {
-        const loadData = document.getElementsByClassName("sidebar");
         try {
           const response = await fetch("http://127.0.0.1:8000/sidebar", {
             method: "POST", // or 'PUT'
@@ -18,7 +17,7 @@ function sideNavData(req){
             console.log(result[i])
             const newLink = document.createElement('a');
             newLink.className = 'sidenav-link'
-            newLink.href = '#';
+            newLink.href = result[i].path;
             newLink.textContent = result[i].name
             sidebarContainer.appendChild(newLink);
    

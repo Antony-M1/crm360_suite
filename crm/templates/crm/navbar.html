@@ -28,7 +28,7 @@
 <div class="sidebar" id="sidebar-container">
 
     {% for title in side_nav_data %}
-    <a class="sidenav-link" href="#title">{{ title }}</a>
+    <a class="sidenav-link" href="{{title.path}}">{{ title.name }}</a>
     {% endfor %}
 </div>
 {% endblock %}

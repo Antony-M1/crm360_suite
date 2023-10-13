@@ -27,7 +27,10 @@ def sidebar(req):
     if req.get('type'):
         data = Masters.objects.filter(type=req.get('type')).values()
         for i in data:
-            side_nav.append(i.get('name'))
+            d = {}
+            d['name'] = i.get('name')
+            d['path'] = i.get('path')
+            side_nav.append(d)
 
     return side_nav
     
