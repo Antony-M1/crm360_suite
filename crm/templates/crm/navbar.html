@@ -1,7 +1,5 @@
 {% extends 'crm/index.html' %}
 {% load static %}
-
-
 {% block navbar %}
 <head>
     <link rel="stylesheet" type="text/css" href="{% static 'crm/css/navbar.css' %}"/>
@@ -19,17 +17,18 @@
             <span style="--i: 7">0</span>
         </div>
         <div class="content">
-            <p onclick="sideNavData('master')"> Master </p>
-            <p onclick="sideNavData('report')"> Report </p>
+            <p onclick="sideNavData('M')"> Master </p>
+            <p onclick="sideNavData('R')"> Report </p>
         </div>
     </div>
     <div class="right-side">
         <img src="{% static 'crm/image/madara.jpg' %}" alt="">
     </div>
 </div>
-<div class="sidebar">
+<div class="sidebar" id="sidebar-container">
+
     {% for title in side_nav_data %}
-    <a class="active" href="#title">{{ title }}</a>
+    <a class="sidenav-link" href="#title">{{ title }}</a>
     {% endfor %}
 </div>
 {% endblock %}

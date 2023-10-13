@@ -25,7 +25,7 @@
 
 /* Links on mouse-over */
 .sidebar a:hover:not(.active) {
-  background-color: #555;
+  border-bottom: 1px solid purple;
   color: white;
 }
 

@@ -215,3 +215,4 @@ class Masters(models.Model):
     name = models.CharField(max_length=255)
     created_at = models.DateTimeField(auto_created=True)
     type = models.CharField(max_length=1, choices=[(choice.value, choice.name) for choice in TableChoice])
+    path = models.CharField(max_length=255)

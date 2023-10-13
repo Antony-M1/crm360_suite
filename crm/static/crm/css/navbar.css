@@ -61,6 +61,12 @@
     border-radius: 50%;
 }
 
+.sidenav-link{
+    font-family: "Audiowide-Regular-CRM" !important;
+    color: purple !important;
+
+}
+
 @keyframes flip {
     0%,80% {
       transform: rotateY(360deg) 
