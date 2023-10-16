@@ -1,0 +1,22 @@
+.row-border {
+    border-bottom: 2px solid black;
+}
+
+.column-border {
+    border-right: 1px solid black;
+}
+.body_table {
+    border: 1px solid black;
+    border-collapse: collapse;
+    border-radius: 1;
+}
+.bodypart {
+    margin: 0;
+    padding: 0;
+    width: 500%;
+    background-color: #f1f1f1;
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+    margin-left: 200px;
+  }

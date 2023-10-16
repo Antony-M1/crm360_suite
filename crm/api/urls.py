@@ -14,4 +14,5 @@ urlpatterns = [
     
     # Signup
     path('api/v1/sign-up', auth.signup, name='sign-up'),
+    
 ]

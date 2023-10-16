@@ -36,3 +36,17 @@
 .signup-form {
     padding: 20px;
 }
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.error-message {
+    color: red;
+    display: block;
+    max-height: 3em; /* Set the maximum height for the error message */
+    overflow: hidden; /* Hide overflow text */
+    white-space: pre-wrap; /* Enable text wrapping */
+}
+

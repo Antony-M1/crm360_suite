@@ -5,6 +5,7 @@ from django.utils.translation import gettext_lazy as _gl
 from django.core.exceptions import ValidationError
 from django.db.models.signals import pre_delete
 from django.dispatch import receiver
+from enum import Enum
 # Create your models here.
 
 class UserAU(AbstractUser):
@@ -206,3 +207,12 @@ class Entry(models.Model):
 
     def __str__(self):
         return self.headline
+    
+class TableChoice(Enum):
+    MASTERS = "M"
+    REPORT = "R"
+class Masters(models.Model):
+    name = models.CharField(max_length=255)
+    created_at = models.DateTimeField(auto_created=True)
+    type = models.CharField(max_length=1, choices=[(choice.value, choice.name) for choice in TableChoice])
+    path = models.CharField(max_length=255)

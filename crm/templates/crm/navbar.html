@@ -1,17 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>CRM 360</title>
-    </head>
-    <body>
-        <ul>
-            <li><a class="active" href="#home">Home</a></li>
-            <li><a href="#news">News</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="#about">About</a></li>
-        </ul>
-        <nav>CRM 360</nav>
-    </body>
-</html>
+
+{% load static %}
+
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'crm/css/navbar.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'crm/css/styles.css' %}"/>
+    <link rel="stylesheet" href="{% static 'crm/css/sidebar.css' %}" />
+</head>
+<div class="nav-bar">
+    <div class="left-side">
+        <div class="title">
+            <span style="--i: 1">C</span>
+            <span style="--i: 2">R</span>
+            <span style="--i: 3">M</span>
+            <span style="--i: 4">&nbsp;</span>
+            <span style="--i: 5">3</span>
+            <span style="--i: 6">6</span>
+            <span style="--i: 7">0</span>
+        </div>
+        <div class="content">
+            <p onclick="sideNavData('M')"> Master </p>
+            <p onclick="sideNavData('R')"> Report </p>
+        </div>
+    </div>
+    <div class="right-side">
+        <img src="{% static 'crm/image/madara.jpg' %}" alt="">
+    </div>
+</div>
+<div class="sidebar" id="sidebar-container">
+
+    {% for title in side_nav_data %}
+    <a class="sidenav-link" href="{{title.path}}">{{ title.name }}</a>
+    {% endfor %}
+   
+</div>
+<div class="bodypart" id="body-container">
+    {% include 'crm/listusers.html' %} 
+    
+</div>
+<script src="{% static 'crm/js/navbar.js' %}"></script>
+
+
+
+
+
+

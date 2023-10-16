@@ -14,10 +14,18 @@
         <div class="signup-box">
             <div class="signup-head">Sign Up</div>
             <div class="signup-form">
-               <form action="/api/v1/sign-up" method="POST">
-                    <label for="your_name">Your name: </label>
-                    <input id="your_name" type="text" name="your_name" value="{{ current_name }}">
-                    <input type="submit" value="OK">
+                <form action="/api/v1/sign-up" method="POST" onsubmit="return validateForm()">
+                    {% csrf_token %}
+                    {% for field in form %}
+                        <div class="form-group">
+                            {{ field.label_tag }}
+                            {{ field }}
+                            {% if field.errors %}
+                                <p style="color: red;">{{ field.errors.0 }}</p>
+                            {% endif %}
+                        </div>
+                    {% endfor %}  
+                    <button type="submit">Sign Up</button>
                 </form>
             </div>
         </div>
