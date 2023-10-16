@@ -31,8 +31,16 @@
     {% for title in side_nav_data %}
     <a class="sidenav-link" href="{{title.path}}">{{ title.name }}</a>
     {% endfor %}
+   
+</div>
+<div class="bodypart" id="body-container">
+    {% include 'crm/listusers.html' %} 
+    
 </div>
 <script src="{% static 'crm/js/navbar.js' %}"></script>
+
+
+
 
 
 

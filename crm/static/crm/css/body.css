@@ -10,12 +10,13 @@
     border-collapse: collapse;
     border-radius: 1;
 }
-.body {
+.bodypart {
     margin: 0;
     padding: 0;
-    width: 15%;
+    width: 500%;
     background-color: #f1f1f1;
     position: fixed;
     height: 100%;
     overflow: auto;
+    margin-left: 200px;
   }
