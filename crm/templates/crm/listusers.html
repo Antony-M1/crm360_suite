@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="{% static 'crm/css/body.css' %}"/>
+        <link rel="stylesheet" type="text/css" href="{% static 'crm/css/styles.css' %}"/>
+    </head>
+    <body>
+        <h1>King</h1>
+        <table class="body_table" style="border: 1;">
+            <thead>
+                <tr class="row-border">
+                    {% for column in columns %}
+                        <th class="column-border">{{ column }}</th>
+                    {% endfor %}
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in data %}
+                    <tr class="row-border">
+                        {% for x in row %}
+                            
+                            <td class = "column-border">{{ x }}</td>
+                           
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </body>
+</html>

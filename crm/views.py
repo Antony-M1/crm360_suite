@@ -7,8 +7,8 @@ from .models import Masters
 
 def home(request):
     context = {}
-    # template_name = 'crm/index.html'
-    template_name = 'crm/navbar.html'
+    template_name = 'crm/index.html'
+    # template_name = 'crm/navbar.html'
     context['side_nav_data']=sidebar({'type': 'M'})
 
     return render(request, template_name, context)

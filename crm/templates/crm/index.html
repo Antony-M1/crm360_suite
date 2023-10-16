@@ -1,3 +1,4 @@
+{% extends 'crm/navbar.html' %}
 {% load static %}
 
 <!DOCTYPE html>
@@ -8,13 +9,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'crm/css/styles.css' %}" />
     <link rel="stylesheet" href="{% static 'crm/css/index.css' %}" />
-    <link rel="stylesheet" href="{% static 'crm/css/sidebar.css' %}" />
+
 
     <title>Document</title>
 </head>
 <body>
     {% block navbar %}{% endblock %}
+    {% block listusers %}{% endblock %}
 
-    <script src="{% static 'crm/js/navbar.js' %}"></script>
+    
 </body>
 </html>
