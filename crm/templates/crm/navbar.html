@@ -1,9 +1,10 @@
-{% extends 'crm/index.html' %}
+
 {% load static %}
-{% block navbar %}
+
 <head>
     <link rel="stylesheet" type="text/css" href="{% static 'crm/css/navbar.css' %}"/>
     <link rel="stylesheet" type="text/css" href="{% static 'crm/css/styles.css' %}"/>
+    <link rel="stylesheet" href="{% static 'crm/css/sidebar.css' %}" />
 </head>
 <div class="nav-bar">
     <div class="left-side">
@@ -31,4 +32,7 @@
     <a class="sidenav-link" href="{{title.path}}">{{ title.name }}</a>
     {% endfor %}
 </div>
-{% endblock %}
+<script src="{% static 'crm/js/navbar.js' %}"></script>
+
+
+
